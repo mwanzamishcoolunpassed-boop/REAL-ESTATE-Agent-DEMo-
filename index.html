@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium responsive real estate agency demo template.">
+  <title>(Business Name) | Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="(Business Name) home">
+      <span class="logo-box">(Logo)</span>
+      <span>(Business Name)</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#properties">Properties</a>
+      <a href="#properties" data-filter-link="sale">For Sale</a>
+      <a href="#properties" data-filter-link="rent">For Rent</a>
+      <a href="#properties" data-category-link="Land">Land</a>
+      <a href="#properties" data-category-link="Commercial">Commercial</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#list-property">List a Property</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">PREMIUM PROPERTY SEARCH</p>
+        <h1>Find a Place You'll Love to Call Home</h1>
+        <p class="hero-sub">(Tagline)</p>
+
+        <form class="search-panel" id="searchForm">
+          <label>Location<input id="locationInput" type="text" placeholder="e.g. Lusaka"></label>
+          <label>Property Type
+            <select id="typeInput">
+              <option value="">Any type</option>
+              <option>House</option><option>Apartment</option><option>Land</option>
+              <option>Commercial</option><option>Office</option><option>Shop</option><option>Warehouse</option>
+            </select>
+          </label>
+          <label>Buy / Rent
+            <select id="statusInput"><option value="">Any</option><option value="sale">Buy</option><option value="rent">Rent</option></select>
+          </label>
+          <label>Min Price<input id="minPrice" type="number" placeholder="0"></label>
+          <label>Max Price<input id="maxPrice" type="number" placeholder="Any"></label>
+          <label>Bedrooms
+            <select id="bedsInput"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+          </label>
+          <button class="primary-btn search-btn" type="submit">Search Properties</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="properties">
+      <div class="section-heading">
+        <div><p class="eyebrow">EXPLORE</p><h2>Featured Properties</h2></div>
+        <p id="resultCount">12 demo properties</p>
+      </div>
+
+      <div class="filter-bar">
+        <select id="sortSelect">
+          <option value="newest">Newest</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+        <div class="view-buttons">
+          <button class="view-btn active" data-view="grid">Grid</button>
+          <button class="view-btn" data-view="list">List</button>
+          <button class="view-btn" data-view="map">Map</button>
+        </div>
+      </div>
+
+      <div class="properties-grid" id="propertyGrid"></div>
+      <div class="map-placeholder hidden" id="mapView">
+        <div class="map-content">
+          <span class="map-pin">⌖</span>
+          <h3>Interactive Map</h3>
+          <p>Connect Google Maps, Mapbox or OpenStreetMap here. Demo property locations can be rendered as markers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section categories">
+      <div class="section-heading"><div><p class="eyebrow">PROPERTY TYPES</p><h2>Find What Fits You</h2></div></div>
+      <div class="category-grid">
+        <button class="category-card" data-category="House"><span>⌂</span><strong>Houses</strong><small>Family homes & residences</small></button>
+        <button class="category-card" data-category="Apartment"><span>▦</span><strong>Apartments</strong><small>Modern urban living</small></button>
+        <button class="category-card" data-category="Land"><span>◈</span><strong>Land</strong><small>Plots & development land</small></button>
+        <button class="category-card" data-category="Commercial"><span>▤</span><strong>Commercial</strong><small>Business properties</small></button>
+        <button class="category-card" data-category="Office"><span>▥</span><strong>Offices</strong><small>Professional workspaces</small></button>
+        <button class="category-card" data-category="Shop"><span>□</span><strong>Shops</strong><small>Retail opportunities</small></button>
+        <button class="category-card" data-category="Warehouse"><span>▧</span><strong>Warehouses</strong><small>Storage & logistics</small></button>
+        <button class="category-card" data-category="Luxury"><span>✦</span><strong>Luxury</strong><small>Premium properties</small></button>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="section-heading light">
+        <div><p class="eyebrow">WHY (BUSINESS NAME)</p><h2>Property decisions with more clarity.</h2></div>
+        <p>Replace these demo statements with the agency's actual value proposition.</p>
+      </div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>Property Guidance</h3><p>Help clients understand their options before making a property decision.</p></article>
+        <article><span>02</span><h3>Verified Listings</h3><p>Show clear property information and make verification processes easy to understand.</p></article>
+        <article><span>03</span><h3>Local Knowledge</h3><p>Present useful information about areas, property types and opportunities.</p></article>
+        <article><span>04</span><h3>Viewing Support</h3><p>Make it simple for interested buyers and renters to request a viewing.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Real Estate Services</h2></div></div>
+      <div class="service-grid">
+        <article class="service-card"><span>01</span><h3>Property Sales</h3><p>Present properties clearly and connect serious enquiries with agents.</p></article>
+        <article class="service-card"><span>02</span><h3>Property Rentals</h3><p>Help tenants discover suitable rental properties.</p></article>
+        <article class="service-card"><span>03</span><h3>Property Management</h3><p>Showcase management services with clear information.</p></article>
+        <article class="service-card"><span>04</span><h3>Property Valuation</h3><p>Provide an enquiry path for valuation services.</p></article>
+        <article class="service-card"><span>05</span><h3>Land Sales</h3><p>Present plots and development opportunities.</p></article>
+        <article class="service-card"><span>06</span><h3>Commercial Property</h3><p>Promote offices, shops, warehouses and other commercial spaces.</p></article>
+      </div>
+    </section>
+
+    <section class="section team">
+      <div class="section-heading"><div><p class="eyebrow">THE TEAM</p><h2>Meet Our Agents</h2></div></div>
+      <div class="team-grid">
+        <article class="agent-card"><div class="agent-photo">(Agent Photo)</div><h3>(Agent Name)</h3><p>Property Consultant</p><div><a href="tel:+000000000">(Phone)</a> · <a href="mailto:email@example.com">(Email)</a></div></article>
+        <article class="agent-card"><div class="agent-photo">(Agent Photo)</div><h3>(Agent Name)</h3><p>Sales & Rentals</p><div><a href="tel:+000000000">(Phone)</a> · <a href="mailto:email@example.com">(Email)</a></div></article>
+        <article class="agent-card"><div class="agent-photo">(Agent Photo)</div><h3>(Agent Name)</h3><p>Commercial Property</p><div><a href="tel:+000000000">(Phone)</a> · <a href="mailto:email@example.com">(Email)</a></div></article>
+      </div>
+    </section>
+
+    <section class="split-section" id="list-property">
+      <div>
+        <p class="eyebrow">PROPERTY OWNERS</p>
+        <h2>Have a property to sell or rent?</h2>
+        <p>Give owners a clear way to submit property information and start a conversation with the agency.</p>
+      </div>
+      <form class="form-card" id="listForm">
+        <input required placeholder="Full Name">
+        <input required type="tel" placeholder="Phone Number">
+        <input type="email" placeholder="Email Address">
+        <select required><option value="">Property Type</option><option>House</option><option>Apartment</option><option>Land</option><option>Commercial</option></select>
+        <input required placeholder="Property Location">
+        <select required><option value="">Sale / Rent</option><option>For Sale</option><option>For Rent</option></select>
+        <input type="number" placeholder="Asking Price">
+        <textarea placeholder="Message"></textarea>
+        <label class="file-input">Upload Property Images<input type="file" accept="image/*" multiple></label>
+        <button class="primary-btn" type="submit">Submit Property</button>
+        <p class="form-message" id="listMessage"></p>
+      </form>
+    </section>
+
+    <section class="section testimonials">
+      <div class="section-heading"><div><p class="eyebrow">DEMO CONTENT</p><h2>What Clients Could Say</h2></div></div>
+      <div class="testimonial-grid">
+        <blockquote>“Example testimonial — replace this with a genuine client review.”<cite>— Demo Client</cite></blockquote>
+        <blockquote>“Example testimonial — replace this with a genuine client review.”<cite>— Demo Client</cite></blockquote>
+        <blockquote>“Example testimonial — replace this with a genuine client review.”<cite>— Demo Client</cite></blockquote>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-image">(Property Image)</div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT (BUSINESS NAME)</p>
+        <h2>A modern way to discover property.</h2>
+        <p>Replace this demo copy with the agency's real story, mission, service areas and values.</p>
+        <div class="stats"><div><strong>01</strong><span>Clear Listings</span></div><div><strong>02</strong><span>Easy Enquiries</span></div><div><strong>03</strong><span>Viewing Support</span></div></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div>
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Let's talk property.</h2>
+        <p>(Office Address)</p>
+        <p>(Phone Number) · (Email Address)</p>
+        <p>(Business Hours)</p>
+      </div>
+      <form class="form-card" id="contactForm">
+        <input required placeholder="Your Name">
+        <input required type="tel" placeholder="Phone Number">
+        <input type="email" placeholder="Email Address">
+        <input placeholder="Property you're interested in">
+        <input type="date" aria-label="Preferred viewing date">
+        <textarea required placeholder="Message"></textarea>
+        <button class="primary-btn" type="submit">Send Enquiry</button>
+        <p class="form-message" id="contactMessage"></p>
+      </form>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="#" id="whatsappButton" aria-label="WhatsApp">(WhatsApp)</a>
+
+  <footer class="footer">
+    <div><div class="brand footer-brand"><span class="logo-box">(Logo)</span><span>(Business Name)</span></div><p>(Tagline)</p></div>
+    <div><h4>Explore</h4><a href="#properties">Properties</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    <div><h4>Services</h4><a href="#services">Sales</a><a href="#services">Rentals</a><a href="#services">Management</a></div>
+    <div><h4>Social</h4><a href="#">(Facebook)</a><a href="#">(Instagram)</a><a href="#">WhatsApp</a></div>
+    <div class="copyright">© <span id="year"></span> (Business Name). All rights reserved.</div>
+  </footer>
+
+  <div class="modal hidden" id="propertyModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
